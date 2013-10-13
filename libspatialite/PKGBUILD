@@ -13,12 +13,12 @@ source=("http://www.gaia-gis.it/gaia-sins/$pkgname-$pkgver.tar.gz")
 md5sums=('356e0b18de0d382e27da578dc227a7b0')
 
 build() {
-    cd "$srcdir/$pkgname-$pkgver"
-    ./configure --prefix=/usr
-    make
+  cd "$srcdir/$pkgname-$pkgver"
+  ./configure --prefix=/usr
+  make
 }
 
 package() {
-    cd "$srcdir/$pkgname-$pkgver"
-    make DESTDIR="$pkgdir/" install
+  cd "$srcdir/$pkgname-$pkgver"
+  make DESTDIR="$pkgdir/" install
 }
