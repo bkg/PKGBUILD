@@ -10,7 +10,7 @@ license=('MPL')
 depends=('glibc')
 options=('!libtool')
 source=("http://www.gaia-gis.it/gaia-sins/freexl-$pkgver.tar.gz")
-md5sums=('1c9df7402ac2d70d38c8853c12dc702d')
+sha256sums=('1dfcfb3b9c0125e0baf2f0c227c102012a3d82652c8f1ae3dd719adce334fae8')
 
 build() {
   cd "$srcdir/${pkgname/lib/}-$pkgver"
