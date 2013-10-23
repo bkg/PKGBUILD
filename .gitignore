@@ -1,6 +1,8 @@
 *
 !*/
 !*/PKGBUILD
+!*/*.install
+!*/*.patch
 !.gitignore
 !buildpkg
 !README.md
