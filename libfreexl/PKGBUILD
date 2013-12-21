@@ -14,7 +14,7 @@ sha256sums=('1dfcfb3b9c0125e0baf2f0c227c102012a3d82652c8f1ae3dd719adce334fae8')
 
 build() {
   cd "$srcdir/${pkgname/lib/}-$pkgver"
-  ./configure --prefix=/usr
+  LIBS=-lm ./configure --prefix=/usr
   make
 }
 
