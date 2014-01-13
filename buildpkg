@@ -6,10 +6,10 @@ usage="Usage: $0 pkgbuild-rootdir"
 # Set a default chroot location unless already defined.
 [ ! -d "$CHROOT" ] && export CHROOT=$HOME/.local/abs/build
 
-# Update pkgbuild with a new md5 (these need to be verified with upstream
-# checksums manually) and attempt building in a chroot. Generates a source
-# package ready to upload to the AUR on successful builds.
+# Update pkgbuild with a new SHA256 sum (these need to be verified with
+# upstream checksums manually) and attempt building in a chroot. Generates a
+# source package ready to upload to the AUR on successful builds.
 cd "$1" &&
-    sed -i "/^md5sums=/ s/.*/$(makepkg --geninteg)/" PKGBUILD &&
-    sudo makechrootpkg -r $CHROOT -n -- --syncdeps --log --clean &&
+    sed -i "/^sha256sums=/ s/.*/$(makepkg --geninteg)/" PKGBUILD &&
+    sudo makechrootpkg -u -r $CHROOT -n -- --syncdeps --log --clean &&
     makepkg --source
