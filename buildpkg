@@ -4,7 +4,7 @@ usage="Usage: $0 pkgbuild-rootdir"
 
 [ ! -d "$1" ] && { echo "$usage"; exit 1; }
 # Set a default chroot location unless already defined.
-[ ! -d "$CHROOT" ] && export CHROOT=$HOME/.local/abs/build
+[ ! -d "$CHROOT" ] && export CHROOT=/var/cache/abs/build
 
 # Update pkgbuild with a new SHA256 sum (these need to be verified with
 # upstream checksums manually) and attempt building in a chroot. Generates a
