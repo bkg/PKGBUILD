@@ -2,9 +2,9 @@
 pkgname=readosm
 pkgver=1.0.0b
 pkgrel=1
-pkgdesc="Library to extract valid data from within an Open Street Map input file"
+pkgdesc='Library to extract valid data from within an Open Street Map input file'
 arch=('i686' 'x86_64')
-url="https://www.gaia-gis.it/fossil/readosm/index"
+url='https://www.gaia-gis.it/fossil/readosm/index'
 license=('MPL')
 depends=('expat' 'zlib')
 options=('!libtool')
