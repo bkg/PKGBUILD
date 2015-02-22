@@ -12,4 +12,4 @@ usage="Usage: $0 pkgbuild-rootdir"
 cd "$1" &&
     sed -i "/^sha256sums=/ s/.*/$(makepkg --geninteg)/" PKGBUILD &&
     sudo makechrootpkg -u -r $CHROOT -n -- --syncdeps --log --clean &&
-    makepkg --source
+    mkaurball -f
