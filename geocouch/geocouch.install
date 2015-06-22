@@ -8,11 +8,15 @@ jsfiles=('spatial.js'
          'spatial_bugfixes.js')
 
 post_install() {
-  for f in ${jsfiles[@]}; do echo "loadTest('$f');" >> $couchtests; done
-  echo 'Seven geospatial tests have been appended to /usr/share/couchdb/www/script/couch_tests.js.'
-  echo 'They should appear at the bottom of the "Test Suite" list in Futon.'
+  printf "loadTest('%s');\n" "${jsfiles[@]}" >> $couchtests
+  cat << EOF
+
+:: ${#jsfiles[@]} geospatial tests have been appended to ${couchtests}.
+:: They should appear at the bottom of the "Test Suite" list in Futon.
+
+EOF
 }
 
 post_remove() {
-  for f in ${jsfiles[@]}; do sed -i "/$f/d" $couchtests; done
+  for f in "${jsfiles[@]}"; do echo sed -i "/$f/d" $couchtests; done
 }
